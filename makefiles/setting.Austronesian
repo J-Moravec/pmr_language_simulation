@@ -1,0 +1,5 @@
+# name of analysis
+NAME = austronesian
+
+# which tree will be used
+TREE = $(NAME).trees

@@ -1,0 +1,32 @@
+# ------------------------------------------------------------------------------
+# specific part for IndoEuropean dataset
+
+preprocess: unify_formatting check_tree
+
+
+
+
+unify_formatting: $(PREP)/residence.txt
+
+$(PREP)/prep_residence.txt: $(PREP)/residence_uncoded.txt $(SOURCE)/coding.txt
++ $(RECODE) $< $(word 2,$^) $@ --header
+
+$(PREP)/residence_uncoded.txt: $(SOURCE)/residence.txt | $(DIRS)
++ $(UNIFY_FORMAT) $< $@ --sep "\t" --colnames "name" "residence" --columns 1 3
+
+
+
+
+check_tree: $(DATA)/$(TREE)
+
+$(DATA)/$(TREE): $(PREP)/$(TREE) $(PREP)/prep_residence.txt $(SOURCE)/unknown.txt
++ $(CHECK_NAMES) $< $(word 2,$^) --tree --rename $(PREP)/renaming_tree.txt \
+ --save $@ --log $(LOGS)/check_tree.log --prune $(SOURCE)/unknown.txt \
+ --reduce $(SOURCE)/unknown.txt --reduce_save $(PREP)/residence.txt
+
+$(PREP)/residence.txt: $(DATA)/$(TREE)
+
+$(PREP)/$(TREE): $(SOURCE)/$(TREE)
++ $(REFORMAT_TREE) $< $@
+# end of specific part for IndoEuropean dataset
+# ------------------------------------------------------------------------------

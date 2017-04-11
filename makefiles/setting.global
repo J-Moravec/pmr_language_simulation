@@ -1,0 +1,65 @@
+# setting RECIPEPREFIX to plus sign:
+.RECIPEPREFIX = +
+
+
+# these folders are already existing
+SOURCE = sources
+SCRIPTS = ../../code
+
+# coding scheme
+CODING_SCHEME = ../../coding_schemes/m_p_a_n.txt
+
+# number of runs
+NRUNS := 5
+# generating integer list
+RUNS := $(shell seq 1 $(NRUNS))
+
+
+# these folders must be created, if they doesn't exist
+PREP = preprocessing
+LOGS = log
+DATA = data
+ANAL = analysis
+POST = postprocessing
+REST = results
+DIRS = $(PREP) $(LOGS) $(DATA) $(ANAL) $(POST) $(REST)
+
+# commands shortcuts:
+UNIFY_FORMAT = Rscript $(SCRIPTS)/unify_format.r
+CHECK_NAMES = Rscript $(SCRIPTS)/check_names.r
+RECODE = Rscript $(SCRIPTS)/recode.r
+COLOR = Rscript $(SCRIPTS)/show_mapping.r
+MODEL_STRING = Rscript $(SCRIPTS)/model_string.r
+SUMMARIZE = Rscript $(SCRIPTS)/summarize_rates.r
+CONFIG = Rscript $(SCRIPTS)/generate_config.r
+BAYES_TRAITS = $(SCRIPTS)/BayesTraitsV2
+REFORMAT_TREE = python $(SCRIPTS)/reformat_tree.py
+REMOVE_HEAD = $(SCRIPTS)/remove_head.sh
+PARSE_ML = Rscript $(SCRIPTS)/parse_ml.r
+CONVERGENCE = Rscript $(SCRIPTS)/summarize_traces.r
+TREESTATS = Rscript $(SCRIPTS)/summarize_trees.r
+SIMMAP = Rscript $(SCRIPTS)/simulate_simmap.r
+
+# define BayesTraits analysis:
+ITERATIONS = 100000000
+SAMPLE = 10000
+RJHP = "rjhp exp 0 200"
+KAPPA = "rjhp exp 0 200\nKappa"
+
+# burnin for summarization of BayesTraits results
+BURNIN = 0.1
+
+# number of SIMMAP simulations
+SIMMAP_NSIM = 2000
+
+# define all parts of analysis
+# unfortunatelly, it must be here as a first target
+#   create dirs: basic directory structure
+#   preprocess: preprocess files, specific for each dataset
+#   recode: recode PMR into chosed coding scheme and show its mapping on tree
+#   analyze: run BayesTraits analysis
+#   postprocess: summarizing BayesTraits analysis
+all: create_dirs preprocess recode analyze postprocess
+
+
+.PHONY: create_dirs preprocess recode analyze postprocess

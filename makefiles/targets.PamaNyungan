@@ -1,0 +1,30 @@
+# ------------------------------------------------------------------------------
+# This is specific part of makefile for Pama Nyungan dataset
+
+preprocess: unify_formatting check_tree
+
+
+
+
+unify_formatting: $(PREP)/residence.txt
+
+$(PREP)/prep_residence.txt: $(SOURCE)/residence.txt | $(DIRS)
++ $(UNIFY_FORMAT) $< $@ --sep " " --colnames "name" "residence" --header
+
+
+
+
+check_tree: $(PREP)/$(TREE) $(DATA)/$(TREE)
+
+$(PREP)/$(TREE): $(SOURCE)/$(TREE)
++ $(REFORMAT_TREE) $< $@
+
+$(DATA)/$(TREE): $(PREP)/$(TREE) $(PREP)/prep_residence.txt $(SOURCE)/prune.txt $(SOURCE)/reduce.txt
++ $(CHECK_NAMES) $< $(word 2,$^) --tree --save $@ --rename $(PREP)/renaming.txt \
+ --log $(LOGS)/check_tree.log --prune $(SOURCE)/prune.txt \
+ --reduce $(SOURCE)/reduce.txt --reduce_save $(PREP)/residence.txt
+
+$(PREP)/residence.txt: $(DATA)/$(TREE)
+
+# end of specific part
+# ------------------------------------------------------------------------------

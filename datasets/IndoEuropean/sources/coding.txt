@@ -1,0 +1,6 @@
+name code
+v patrilocal
+vu ambilocal
+u matrilocal
+n neolocal
+- -

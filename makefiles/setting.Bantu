@@ -1,0 +1,5 @@
+# name of analysis
+NAME = bantu
+
+# which tree will be used
+TREE = $(NAME).trees

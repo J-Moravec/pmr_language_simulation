@@ -1,0 +1,6 @@
+# name of analysis
+NAME = indoeuropean
+
+# which tree will be used
+
+TREE = $(NAME).trees

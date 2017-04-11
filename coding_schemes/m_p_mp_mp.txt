@@ -1,0 +1,7 @@
+# matrilocality, patrilocality and the rest is unknown
+name code
+ambilocal mp
+matrilocal m
+patrilocal p
+neolocal mp
+- -

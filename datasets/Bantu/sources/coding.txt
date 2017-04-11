@@ -1,0 +1,4 @@
+name code
+1 patrilocal
+2 neolocal
+3 matrilocal

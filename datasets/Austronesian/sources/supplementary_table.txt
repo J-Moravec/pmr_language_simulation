@@ -1,0 +1,136 @@
+society name	ABVD language	primary residence	first years/alternate form	code	geographic location	source
+Agta	Agta	ambilocal	–/–	MP	Philippines	Headland 1993
+Ambon	Hitu	patrilocal	n.d./ambilocal	P	Maluku	Ethnographic Atlas
+Ami	Central Amis	matrilocal	n.d./none	M	Taiwan	Ethnographic Atlas
+Atayal	Squliq Atayal	patrilocal	n.d./matrilocal	P	Taiwan	Ethnographic Atlas
+Atoni	Atoni	patrilocal	–/matrilocal	P	Nusa Tenggara	LeBar 1972a
+Aua	Wuvulu	neolocal	n.d./none	MP	Bismarck Arch.	Ethnographic Atlas
+Babar	North Babar	matrilocal	–/–	M	Nusa Tenggara	Loeb & Broek 1947
+Bajau	Bajo	ambilocal	matrilocal/–	MP	Philippines	Ethnographic Atlas
+Bali	Bali	patrilocal	n.d./matrilocal	P	Nusa Tenggara	Ethnographic Atlas
+Banggai	Banggai	ambilocal	–/–	MP	Sulawesi	LeBar 1972b
+Belu	Tetum	matrilocal	–/–	M	Nusa Tenggara	Ethnographic Atlas
+Bilaan	Koronadal Blaan	neolocal	–/–	MP	Philippines	Ethnographic Atlas
+Bisayan	Aklanon Bisayan	ambilocal	–/ambilocal	MP	Philippines	Ethnographic Atlas
+Bolaang	Bolaang Mongondow	ambilocal	–/–	MP	Sulawesi	LeBar 1975c
+Bonerate	Bonerate	matrilocal	–/–	M	Nusa Tenggara	Broch 1993
+Bontok	Bontok Guinaang	patrilocal	n.d./matrilocal	P	Philippines	Ethnographic Atlas
+Buginese	Buginese Soppeng	matrilocal	–/–	M	Sulawesi	Acciaioli 1993
+Buli	Buli	patrilocal	matrilocal/–	P	Halmahera	Bubandt 1995
+Bunun	Bunun	patrilocal	–/–	P	Taiwan	Ethnographic Atlas
+Bwaidoga	Bwaidoga	patrilocal	–/matrilocal	P	S.E. PNG	Ethnographic Atlas
+Carolinian	Saipan Carolinian	matrilocal	–/–	M	Micronesia	Ethnographic Atlas
+Cham	Phan Rang Cham	matrilocal	–/–	M	Vietnam	Ethnographic Atlas
+Chamorro	Chamorro	neolocal	–/–	MP	Micronesia	Ethnographic Atlas
+Choiseul	Vaghua Choiseul	patrilocal	–/matrilocal	P	Solomon Is.	Ethnographic Atlas
+Chuuk	Chuukese	matrilocal	–/patrilocal	M	Micronesia	Ethnographic Atlas
+Dahuni	Suau	patrilocal	–/matrilocal	P	S.E. PNG	Ethnographic Atlas
+Dobuan	Dobuan	matrilocal	–/ambilocal,avunculocal	M	Massim Arch.	Ethnographic Atlas
+Dusun	Ida'an	patrilocal	–/matrilocal	P	Borneo	Ethnographic Atlas
+EastFutuna	Futuna, East	patrilocal	ambilocal/matrilocal	P	Polynesia PO	Ethnographic Atlas
+EastUvea	Uvea, East	patrilocal	–/matrilocal	P	Polynesia PO	Ethnographic Atlas
+Erai	Erai	ambilocal	matrilocal/–	MP	Nusa Tenggara	Loeb & Broek 1947
+Eromanga	Sye Erromangan	patrilocal	–/–	P	Vanuatu	Ethnographic Atlas
+Fijian	Fijian Bau	patrilocal	–/–	P	Polynesia	Ethnographic Atlas
+Gaddang	Gaddang	neolocal	–/–	MP	Philippines	Wallace 1969
+Gayo	Gayo	ambilocal	–/patrilocal	MP	Sumatra	Bowen 1993a
+Giman	Giman	patrilocal	–/–	P	Halmahera	Teljeur 1990
+Hanunoo	Hanunoo	matrilocal	–/patrilocal	M	Philippines	Ethnographic Atlas
+Hawaiian	Hawaiian	ambilocal	–/–	MP	Polynesia	Ethnographic Atlas
+Iban	Iban	ambilocal	n.d./none	MP	Borneo	Ethnographic Atlas
+Ifugao	Ifugao, Batad	ambilocal	n.d./none	MP	Philippines	Ethnographic Atlas
+IliMandiri	Lamaholot Ile Mandiri	patrilocal	n.d./matrilocal	P	Nusa Tenggara	Ethnographic Atlas
+Ilongot	Kakiduge:n Ilongot	matrilocal	n.d./patrilocal	M	Philippines	Strouthes 1993b
+Irarutu	Kasira Irahutu	patrilocal	–/–	P	Irian Jaya	Matsumura 1997
+Javanese	Javanese	neolocal	–/ambilocal, matrilocal	MP	Java	Ethnographic Atlas
+Kalinga	Kalinga Guinaang	matrilocal	n.d./ambilocal	M	Philippines	Ethnographic Atlas
+Kaoka	Ghari Guadalcanal	matrilocal	patrilocal/patrilocal	M	Solomon Is.	Ethnographic Atlas
+Kapinga	Kapingamarangi	matrilocal	patrilocal/–	M	Micronesia PO	Ethnographic Atlas
+Kedang	Kedang	patrilocal	–/ambilocal	P	Nusa Tenggara	Barnes 1974
+Kei	Elat Kei Besar	patrilocal	n.d./matrilocal	P	Maluku	Ethnographic Atlas
+Kenyah	Kenyah Long Anap	ambilocal	–/–	MP	Borneo	LeBar 1972d
+Kerinci	Kerinci	matrilocal	–/–	M	Sumatra	Jaspan 1972
+Kiribati	Kiribati	patrilocal	n.d./matrilocal	P	Micronesia	Ethnographic Atlas
+Kisar	Kisar	patrilocal	–/–	P	Nusa Tenggara	Loeb & Broek 1947
+Kodi	Kodi	patrilocal	n.d./none	P	Nusa Tenggara	Ethnographic Atlas
+Koobe	Vitu	patrilocal	n.d./none	P	Bismarck Arch.	Ethnographic Atlas
+Kusaie	Kusaie	patrilocal	n.d./ambilocal	P	Micronesia	Ethnographic Atlas
+Kwaio	Kwaio	patrilocal	n.d./ambilocal	P	Solomon Is.	Ethnographic Atlas
+Lakalai	Lakalai	patrilocal	n.d./ambilocal	P	Bismarck Arch.	Ethnographic Atlas
+Letinese	Letinese	matrilocal	–/–	M	Nusa Tenggara	Loeb & Broek 1947
+Lifu	Dehu	patrilocal	n.d./none	P	New Caledonia	Ethnographic Atlas
+Macassarese	Makassar	ambilocal	–/–	MP	Sulawesi	Ethnographic Atlas
+Madurese	Madurese	matrilocal	–/neolocal	M	Java	Koentjaraningrat 1972a
+Malagasy	Merina Malagasy	patrilocal	n.d./none	P	Madagascar	Ethnographic Atlas
+Malay	Melayu	patrilocal	matrilocal/ambilocal	P	Malaysia Pen.	Ethnographic Atlas
+Manam	Manam	patrilocal	n.d./ambilocal	P	N. PNG	Ethnographic Atlas
+Mangaian	Rarotongan	patrilocal	n.d./matrilocal	P	Polynesia	Ethnographic Atlas
+Mangarevan	Mangareva	patrilocal	n.d./ambilocal	P	Polynesia	Ethnographic Atlas
+Manggarai	Manggarai	patrilocal	matrilocal/–	P	Nusa Tenggara	Koentjaraningrat 1972b
+Manobo	Western Bukidnon Manobo	patrilocal	matrilocal/none	P	Philippines	Ethnographic Atlas
+Manus	Levei	patrilocal	n.d./ambilocal	P	Bismarck Arch.	Ethnographic Atlas
+Maori	Maori	patrilocal	n.d./none	P	Polynesia	Ethnographic Atlas
+Maranao	Maranao	matrilocal	n.d./ambilocal	M	Philippines	LeBar 1975
+Marquesan	Marquesan	patrilocal	matrilocal/ambilocal	P	Polynesia	Ethnographic Atlas
+Marshallese	Marshallese	ambilocal	n.d./none	M	Micronesia	Ethnographic Atlas
+Mekeo	Mekeo	patrilocal	n.d./none	P	S. PNG	Ethnographic Atlas
+Melanau	Melanau Mukah	matrilocal	–/–	M	Borneo	Morris 1993
+Minangkabau	Minangkabau	matrilocal	–/–	M	Sumatra	Ethnographic Atlas
+Misool	Biga Misool	ambilocal	–/–	MP	Irian Jaya	B. Rijmesen pers. comm. 2008
+Modang	Modang	matrilocal	–/ambilocal	M	Borneo	Guerreiro 1993
+Moken	Moken	neolocal	matrilocal/patrilocal	MP	Andaman Sea	Ethnographic Atlas
+Molima	Molima	patrilocal	n.d./matrilocal	P	Massim Arch.	Ethnographic Atlas
+Mori	Mori	matrilocal	–/neolocal	M	Sulawesi	LeBar 1972e
+Mota	Mota	matrilocal	n.d./none	M	Vanuatu	Ethnographic Atlas
+Motu	Motu	patrilocal	n.d./matrilocal	P	S. PNG	Ethnographic Atlas
+Nelemwa	Nelemwa	patrilocal	–/–	P	New Caledonia	Isabelle Bril pers. comm. 2008
+NgajuDayak	Dayak Ngaju	matrilocal	–/–	M	Borneo	Ave 1972
+Nguna	Nguna	patrilocal	–/–	P	Vanuatu	Facey 1991
+Nias	Nias	patrilocal	–/matrilocal	P	Sumatra	Beatty 1993
+Nissan	Nissan	patrilocal	–/neolocal	P	Solomon Is.	Nachman 1991
+Niue	Niue	patrilocal	n.d./matrilocal	P	Polynesia	Ethnographic Atlas
+Nomoian	Mortlockese	matrilocal	n.d./none	M	Micronesia	Ethnographic Atlas
+Numfor	Numfor	patrilocal	matrilocal/–	P	Irian Jaya	Kamma 1972
+Ogan	Ogan	matrilocal	–/ambilocal	M	Sumatra	Bowen 1993b9
+OntongJava	Luangiua	matrilocal	n.d./patrilocal	M	Solomon Is. PO	Ethnographic Atlas
+Paiwan	Paiwan	patrilocal	n.d./matrilocal	P	Taiwan	Ethnographic Atlas
+Palauan	Palauan	matrilocal	patrilocal/patrilocal	M	Micronesia	Ethnographic Atlas
+PalawanBatak	Palawan Batak	matrilocal	n.d./none	M	Philippines	Warren 1975
+Ponape	Ponapean	matrilocal	n.d./matrilocal	M	Micronesia	Ethnographic Atlas
+Punan	Punan Kelai	ambilocal	–/–	MP	Borneo	Ethnographic Atlas
+Puyuma	Puyuma	matrilocal	n.d./patrilocal	M	Taiwan	Ethnographic Atlas
+Rapanui	Rapanui Easter Island	patrilocal	n.d./matrilocal	P	Polynesia	Ethnographic Atlas
+Rennellese	Rennellese	patrilocal	–/–	P	Solomon Is. PO	Birket-Smith 1991
+Roti	Roti Termanu	patrilocal	n.d./none	P	Nusa Tenggara	Ethnographic Atlas
+Rotuman	Rotuman	matrilocal	n.d./none	M	Polynesia	Ethnographic Atlas
+Roviana	Roviana	patrilocal	–/–	P	Solomon Is.	Somerville 1897
+SagadaIgorot	Kankanay, Northern	ambilocal	n.d./none	MP	Philippines	Ethnographic Atlas
+Saisiat	Saisiat	patrilocal	–/matrilocal	P	Taiwan	Mabuchi 1960
+Samoan	Samoan	ambilocal	matrilocal/patrilocal	MP	Polynesia	Ethnographic Atlas
+SantaCruz	Malo, Santa Cruz	patrilocal	n.d./ambilocal	P	Solomon Is. PO	Ethnographic Atlas
+Sengseng	Sengseng	neolocal	–/–	MP	Bismarck Arch.	Chowning 1991
+Sika	Sika	ambilocal	matrilocal/none	MP	Nusa Tenggara	Fox 1972
+Simbo	Simbo	ambilocal	matrilocal/none	MP	Solomon Is.	Ethnographic Atlas
+Subanun	Subanun, Sindangan	ambilocal	matrilocal/–	MP	Philippines	Ethnographic Atlas
+Sugbuhanon	Cebuano	neolocal	neolocal	MP	Philippines	Ethnographic Atlas
+Sumbanese	Kambera	patrilocal	n.d./none	P	Nusa Tenggara	Ethnographic Atlas
+Sumbawanese	Bima	neolocal	matrilocal/none	MP	Nusa Tenggara	Ethnographic Atlas
+Sundanese	Sunda	ambilocal	–/neolocal	MP	Java	Strouthes 1993c
+Tagbanua	Tagbanwa, Aborlan	matrilocal	n.d./patrilocal	M	Philippines	Ethnographic Atlas
+Tahitian	Tahitian Modern	ambilocal	n.d./none	MP	Polynesia	Ethnographic Atlas
+Tanimbarese	Selaru	patrilocal	matrilocal/none	P	Nusa Tenggara	Ethnographic Atlas
+Tikopia	Tikopia	patrilocal	n.d./none	P	Solomon Is. PO	Ethnographic Atlas
+TobaBatak	Toba Batak	patrilocal	n.d./ambilocal	P	Sumatra	Ethnographic Atlas
+Tokelau	Tokelau	matrilocal	n.d./patrilocal	M	Polynesia PO	Ethnographic Atlas
+Tongan	Tongan	patrilocal	n.d./matrilocal	P	Polynesia	Ethnographic Atlas
+Tongarevan	Penrhyn	patrilocal	n.d./matrilocal	P	Polynesia	Ethnographic Atlas
+Toradja	Tae' S.Toraja	matrilocal	n.d./none	M	Sulawesi	Ethnographic Atlas
+Trobriand	Kilivila	matrilocal	n.d./patrilocal	M	Massim Arch.	Ethnographic Atlas
+Tsou	Tsou	patrilocal	n.d./none	P	Taiwan	Mabuchi 1960
+Tuamotu	Tuamotu	ambilocal	n.d./ambilocal	MP	Polynesia	Ethnographic Atlas
+Tuvalu	Tuvalu	patrilocal	n.d./matrilocal	P	Polynesia PO	Ethnographic Atlas
+Ulawan	Sa'a	patrilocal	n.d./none	P	Solomon Is.	Ethnographic Atlas
+Waropen	Waropen	patrilocal	n.d./none	P	West Papua	Ethnographic Atlas
+Wogeo	Wogeo	patrilocal	n.d./none	P	N. PNG	Ethnographic Atlas
+Woleaian	Woleaian	ambilocal	n.d./none	MP	Micronesia	Ethnographic Atlas
+Yami	Yami	patrilocal	n.d./none	P	Taiwan	Ethnographic Atlas

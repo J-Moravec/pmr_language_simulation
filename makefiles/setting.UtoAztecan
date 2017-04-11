@@ -1,0 +1,8 @@
+# name of analysis
+NAME = utoaztecan
+
+# which tree will be used
+TREE = $(NAME).trees
+
+
+

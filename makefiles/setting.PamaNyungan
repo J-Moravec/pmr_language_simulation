@@ -1,0 +1,8 @@
+# name of analysis
+NAME = pamanyungan
+
+# which tree will be used
+TREE = $(NAME).trees
+
+# setting RJHP for PamaNyungan
+RJHP = "rjhp exp 0 400"

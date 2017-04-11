@@ -1,0 +1,7 @@
+# matrilocality, patrilocality and the rest as ambilocal
+name code
+ambilocal a
+matrilocal m
+patrilocal p
+neolocal a
+- -

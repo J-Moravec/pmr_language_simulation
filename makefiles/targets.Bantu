@@ -1,0 +1,27 @@
+# ------------------------------------------------------------------------------
+# This is specific part of makefile for Bantu dataset
+
+
+preprocess: unify_formatting check_tree
+
+
+
+
+unify_formatting: $(PREP)/residence.txt
+
+$(PREP)/residence.txt: $(PREP)/residence_uncoded.txt $(SOURCE)/coding.txt
++ $(RECODE) $< $(word 2,$^) $@ --header
+
+$(PREP)/residence_uncoded.txt: $(SOURCE)/residence.txt | $(DIRS)
++ $(UNIFY_FORMAT) $< $@ --sep "\t"  --colnames "name" "residence"
+
+
+check_tree: $(DATA)/$(TREE)
+
+$(PREP)/$(TREE): $(SOURCE)/$(TREE)
++ $(REFORMAT_TREE) $< $@
+
+$(DATA)/$(TREE): $(PREP)/$(TREE) $(PREP)/residence.txt
++ $(CHECK_NAMES) $< $(word 2,$^) --tree --rename $(PREP)/renaming_tree.txt --save $@ --log $(LOGS)/check_tree.log
+# end of specific part
+# ------------------------------------------------------------------------------

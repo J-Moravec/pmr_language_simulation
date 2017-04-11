@@ -1,0 +1,33 @@
+# ------------------------------------------------------------------------------
+# This is specific part of makefile for UtoAztecan dataset
+
+preprocess: unify_formatting check_tree
+
+
+
+
+unify_formatting: $(PREP)/prep_residence.txt
+
+$(PREP)/prep_residence.txt: $(SOURCE)/residence.txt | $(DIRS)
++ $(UNIFY_FORMAT) $< $@ --sep " " --colnames "name" "residence" --header
+
+
+
+
+check_tree: $(LOGS)/check_tree.log $(DATA)/$(TREE)
+
+$(PREP)/$(TREE):
++ $(REFORMAT_TREE) $(SOURCE)/$(TREE) $@
+
+
+$(LOGS)/check_tree.log: $(PREP)/$(TREE) $(PREP)/prep_residence.txt
++ $(CHECK_NAMES) $< $(word 2,$^) --tree --log $@
+
+$(DATA)/$(TREE): $(PREP)/$(TREE) $(PREP)/prep_residence.txt
++ $(CHECK_NAMES) $< $(word 2,$^) --tree --save $@ --log $(LOGS)/check_tree2.log \
+ --prune $(SOURCE)/prune.txt --reduce $(SOURCE)/reduce.txt --reduce_save $(PREP)/residence.txt
+
+$(PREP)/residence.txt: $(DATA)/$(TREE)
+
+# end of specific part
+# ------------------------------------------------------------------------------

@@ -1,0 +1,7 @@
+# ambilocality is coded as unknown state between matri and patri
+name code
+ambilocal mp
+matrilocal m
+patrilocal p
+neolocal n
+- -

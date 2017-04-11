@@ -1,0 +1,7 @@
+# everything is encoded as its own state
+name code
+ambilocal a
+matrilocal m
+patrilocal p
+neolocal n
+- -
