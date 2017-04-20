@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Pipeline documentation</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+<body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">Pipeline documentation</a>
+         <ul class="nav", style="float:right;">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Content<b class="caret"></b></a>
+            <ul class="dropdown-menu">    <li class="sidebar-header-1"><a href="#pipeline-documentation">Pipeline documentation</a></li>
+    <li class="sidebar-header-2"><a href="#design-aims-and-problems">Design aims and problems</a></li>
+    <li class="sidebar-header-2"><a href="#pipeline-structure-">Pipeline structure:</a></li>
+    <li class="sidebar-header-2"><a href="#used-scripts-and-their-short-description-">Used scripts and their short description:</a></li>
+    <li class="sidebar-header-4"><a href="#stupidsignal">stupidSignal</a></li>
+    <li class="sidebar-header-4"><a href="#check_names-r">check_names.r</a></li>
+    <li class="sidebar-header-4"><a href="#generate_config-r">generate_config.r</a></li>
+    <li class="sidebar-header-4"><a href="#model_string-r">model_string.r</a></li>
+    <li class="sidebar-header-4"><a href="#parse_ml-r">parse_ml.r</a></li>
+    <li class="sidebar-header-4"><a href="#recode-r">recode.r</a></li>
+    <li class="sidebar-header-4"><a href="#reformat_tree-py">reformat_tree.py</a></li>
+    <li class="sidebar-header-4"><a href="#remove_head-sh">remove_head.sh</a></li>
+    <li class="sidebar-header-4"><a href="#rename-r">rename.r</a></li>
+    <li class="sidebar-header-4"><a href="#show_mapping-r">show_mapping.r</a></li>
+    <li class="sidebar-header-4"><a href="#simulate_simmap-r">simulate_simmap.r</a></li>
+    <li class="sidebar-header-4"><a href="#summarize_rates-r-summarize_traces-r-summarize_trees-r">summarize_rates.r summarize_traces.r summarize_trees.r</a></li>
+    <li class="sidebar-header-4"><a href="#unify_format-r">unify_format.r</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"><h1 id="pipeline-documentation"><a class="header-link" href="#pipeline-documentation"></a>Pipeline documentation</h1>
+<p>This documentation should provide a short overview on structure, aims and function of pipeline as a whole and its individual parts.</p>
+<h2 id="design-aims-and-problems"><a class="header-link" href="#design-aims-and-problems"></a>Design aims and problems</h2>
+<p>In this work, one of our target was to produce open and repeatable analysis and partially because of that, some code became a bit more complicated, as it had to handle specificities in each dataset. This is notable especially in <em>preprocessing</em> step. Furthermore, bugs and/or <em>design features</em> in used software and packages exacerbated this even more, such as notably bad <code>ape</code>&#39;s code for reading Nexus trees, which can&#39;t handle if the translation matrix is not ordered. This forced us to use <code>python</code> and <code>dendropy</code>, which would not be otherwise required. Overall, the pipeline is mostly written in <code>R</code>, utilizing <code>bash</code> in a few parts where problems could be easily solved using highly optimized programs <code>sed</code> and <code>cut</code> for fast processing of large outputs from <code>BayesTraits</code>. Finally, individual scripts form isolated steps that are connected with <code>make</code>, note that you need <code>3.82</code> or higher version of <code>GNU make</code> as we use <code>.RECIPEPREFIX</code> variable in our makefiles.</p>
+<h2 id="pipeline-structure-"><a class="header-link" href="#pipeline-structure-"></a>Pipeline structure:</h2>
+<p>Our pipeline is divided into <em>preprocessing</em>, <em>analysis step</em> and <em>postprocessing</em>:</p>
+<ul class="list">
+<li><strong>preprocessing</strong> -- prepares source file for BayesTraits analysis<ul class="list">
+<li>reformat source files from their original format into new unified format</li>
+<li>compare languages in residence file with languages in tree file and report any problems (i.e., missing names from one or the other)</li>
+<li>prune/remove languages that are not in tree/table</li>
+<li>recode according to specified <em>coding scheme</em></li>
+<li>create PDF of tree with mapped residence states</li>
+<li>create input setting file for <code>BayesTraits</code></li>
+</ul>
+</li>
+<li><strong>analysis</strong> -- main analysis using <code>BayesTraits</code>, this is the most time-consuming step</li>
+<li><strong>postprocessing</strong> -- test for convergence, summarize results and perform SIMMAP analysis<ul class="list">
+<li>testing for convergence</li>
+<li>summarizing results with various statistics into formated tables</li>
+<li>SIMMAP simulation</li>
+</ul>
+</li>
+</ul>
+<p>Only the <em>preprocessing</em> step is specific for each dataset, all other steps are exactly the same. This is also reflected in the form of makefiles. Due to lack of templating capabilities in standard makefiles, we have divided our makefiles into four parts, which are connected together before analysis:</p>
+<ul class="list">
+<li>setting.global -- various settings that are common for each dataset</li>
+<li>setting.local -- local setting for specific dataset</li>
+<li>targets.local -- preprocessing step which is specific for every dataset</li>
+<li>targets.global -- all others general steps</li>
+</ul>
+<h2 id="used-scripts-and-their-short-description-"><a class="header-link" href="#used-scripts-and-their-short-description-"></a>Used scripts and their short description:</h2>
+<p>In total, 15 scripts were used to perform analysis. Here is short description of them:</p>
+<h4 id="stupidsignal"><a class="header-link" href="#stupidsignal"></a>stupidSignal</h4>
+<p>Package providing colored wrappers around standard <code>R</code> signals (<code>stop()</code>, <code>warning()</code> and <code>message()</code>), so that they can be easily distinguished in output. Note that the coloring code does not currently determine if terminal is capable of handling colors, so if it is not capable, or if output is send to file instead of graphical terminal, then you will see the special coloring marks.</p>
+<h4 id="check_names-r"><a class="header-link" href="#check_names-r"></a>check_names.r</h4>
+<p>Compare two tables or table and tree and report if any item from tree is missing from table or if any item from table is missing from tree. Both tree-names and table-names are set to lowercase. Both tree and table can be pruned (remove unvanted languages) by specifying <code>--prune</code> or <code>--reduce</code> arguments.</p>
+<h4 id="generate_config-r"><a class="header-link" href="#generate_config-r"></a>generate_config.r</h4>
+<p>Generate config file for <code>BayesTraits</code> with default setting. Setting can be changed by specifying arguments. Thus, using makefile part <code>setting.global</code>, config can be easily set globally for every dataset just in single line.</p>
+<h4 id="model_string-r"><a class="header-link" href="#model_string-r"></a>model_string.r</h4>
+<p>After using <code>remove_head.sh</code>, model string, which describe parametrization of rate matrix, can be analyzed using this script.</p>
+<h4 id="parse_ml-r"><a class="header-link" href="#parse_ml-r"></a>parse_ml.r</h4>
+<p>Instead of full Bayesian analysis with <code>BayesTraits</code>, one can also run Maximum Likelihood. This was used in analysis to determine RJ MCMC priors. This script will summarize results from ML analysis, which can be run through <code>execute_make.sh</code>.</p>
+<h4 id="recode-r"><a class="header-link" href="#recode-r"></a>recode.r</h4>
+<p>This script is used in <code>preprocessing</code> to recode residence according to specified coding scheme. This enables anyone to change from our 4 states (patrilocal, matrilocal, ambilocal, neolocal) to 3 states (patrilocal, matrilocal, ambilocal+neolocal) and so on. Recode also output residence table in format expected by <code>BayesTraits</code>.</p>
+<h4 id="reformat_tree-py"><a class="header-link" href="#reformat_tree-py"></a>reformat_tree.py</h4>
+<p>The only <code>python</code> script. Some trees that we have obtained did have slightly misformed translation matrix (part of NEXUS specification, traditionally tip names are translated into numbers, which are then used in TREE part of NEXUS file), they were out of order as if someone manually deleted whole tip from matrix and tree, bust still perfectly valid. <code>ape</code>&#39;s function for reading NEXUS files was unable to deal with it and authors commented that this is by design. Thus, we had to use <code>python</code> to just load and save again NEXUS file to correct this.</p>
+<h4 id="remove_head-sh"><a class="header-link" href="#remove_head-sh"></a>remove_head.sh</h4>
+<p>Bash script that process <code>BayesTraits</code> output by removing the header and model string. This produce DSV (delimiter-separated values), which can be easily processed by <code>R</code>. This can also parse only the model string part of output, which is then processed by <code>model_string.r</code>.</p>
+<h4 id="rename-r"><a class="header-link" href="#rename-r"></a>rename.r</h4>
+<p>Originally used for renaming residence table to remove conflicts with names in tree. This function was absorbed by <code>check_names.r</code> and this script is not used in pipeline.</p>
+<h4 id="show_mapping-r"><a class="header-link" href="#show_mapping-r"></a>show_mapping.r</h4>
+<p>Produce image of trees with mapped post-marital residence states after (or at the end) of postprocessing stage. To summarize posterior samples of trees, single maximum clade credibility tree is created, which is the used for SIMMAP analysis.</p>
+<h4 id="simulate_simmap-r"><a class="header-link" href="#simulate_simmap-r"></a>simulate_simmap.r</h4>
+<p>Code to run SIMMAP analysis using <code>phytools</code> library.</p>
+<h4 id="summarize_rates-r-summarize_traces-r-summarize_trees-r"><a class="header-link" href="#summarize_rates-r-summarize_traces-r-summarize_trees-r"></a>summarize_rates.r summarize_traces.r summarize_trees.r</h4>
+<p>These functions analyse output from <code>BayesTraits</code> after it was preprocessed by <code>remove_head.sh</code>. Script <code>summarize_rates.r</code> summarize rates (as name suggest), script <code>summarize_trees.r</code> will summarize posterior sample of trees (such as their size, total sum of all branches, number of tips...) and <code>summarize_traces.r</code> will perform analysis of convergence using <code>coda</code> package. Note that this package throws a lot of warning and errors (matrix operations on with small numbers), so please ignore them.</p>
+<h4 id="unify_format-r"><a class="header-link" href="#unify_format-r"></a>unify_format.r</h4>
+<p>This script will take table or part of table and output this talbe in a new format with unified separator, presence of header and so on across all datasets.</p>
+  </div>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
