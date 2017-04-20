@@ -20,5 +20,5 @@ Folder structure is as follows:
 To run analysis, run the script `execute_make.sh -h` and follow its instructions.
 
 For more information, read the documentation:
-* in HTML format: [here](documentation/documentation.html)
+* in HTML format: [here](https://htmlpreview.github.io/?https://github.com/J-Moravec/pmr_language_simulation/blob/master/documentation/documentation.html)
 * in markdown format: [here](documentation/documentation.md)
