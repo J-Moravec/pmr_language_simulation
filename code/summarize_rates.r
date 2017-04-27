@@ -8,7 +8,7 @@
 #' as calculated from tree.
 library("argparser", quiet=TRUE)
 library("ape")
-library("stupidSignal")
+library("simpleSignal")
 
 
 read_traces = function(filenames){
@@ -47,7 +47,7 @@ remove_burnin = function(traces, burnin, percentage){
             trace = trace[-seq_len(n_burn),]
             }
         text = paste0("Removing ", n_burn, " states out of ", n, " total.")
-        stupidSignal::info(text)
+        simpleSignal::info(text)
         afterburn[[name]] = trace
         }
     #names(afterburn) = names(traces)
@@ -85,7 +85,7 @@ get_rate_matrix = function(table, method, remove_zeros=FALSE){
         fmethod = mode
         } else {
         text = "Unrecognized method. Method must be either mean or median!"
-        stupidSignal::error(text)
+        simpleSignal::error(text)
         }
     states = get_ratenames(colnames(table))
     # change table of rates into list, remove zero
@@ -151,7 +151,7 @@ get_height = function(tree){
         height = lapply(height, max)
         height = mean(unlist(height))
         } else {
-        stupidSignal::error("ERROR: in get_height: unrecognized tree format")
+        simpleSignal::error("ERROR: in get_height: unrecognized tree format")
         }
     return(height)
     }
@@ -163,7 +163,7 @@ get_branch_length = function(tree){
         } else if (class(tree) == "multiPhylo"){
         branch_length = mean(unlist(lapply(tree, getElement, "edge.length")))
         } else {
-        stupidSignal::error("ERROR: in get_branch_length: unrecognized tree format")
+        simpleSignal::error("ERROR: in get_branch_length: unrecognized tree format")
         }
     return(branch_length)
     }

@@ -3,7 +3,7 @@
 #' This script will summarize nexus trees and output simple formated stats
 library("argparser", quiet=TRUE)
 library("ape")
-library("stupidSignal")
+library("simpleSignal")
 
 
 read_tree = function(filepath){
@@ -125,7 +125,7 @@ get_tree_stats = function(tree, digits){
         tree_stats = get_tree_stats_multiphylo(tree)
         tree_stats_text = tree_stats_format_multiphylo(tree_stats)
         } else {
-        stupidSignal::error("ERROR: in get_tree_stats: unrecognized tree format")
+        simpleSignal::error("ERROR: in get_tree_stats: unrecognized tree format")
         }
     return(tree_stats_text)
     }

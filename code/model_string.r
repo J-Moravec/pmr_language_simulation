@@ -5,7 +5,7 @@
 
 
 library("argparser", quiet=TRUE)
-library("stupidSignal")
+library("simpleSignal")
 .columnames = NA
 
 read_model_string = function(filepath){
@@ -49,7 +49,7 @@ remove_burnin = function(traces, burnin, percentage){
             trace = trace[-seq_len(n_burn)]
             }
         text = paste0("Removing ", n_burn, " states out of ", n, " total.")
-        stupidSignal::info(text)
+        simpleSignal::info(text)
         afterburn[[name]] = trace
         }
     return(afterburn)

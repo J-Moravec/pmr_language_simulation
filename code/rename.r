@@ -1,7 +1,7 @@
 #' Read two column matrix and change names according to another two
 #' another two column matrix.
 library("argparser", quiet=TRUE)
-library("stupidSignal")
+library("simpleSignal")
 
 get_renaming_vector = function(renaming_file){
     table = read.table(renaming_file, sep=" ", stringsAsFactors=FALSE,
@@ -33,7 +33,7 @@ main = function(args){
     renamed_table = rename(original_table, renaming_vector)
     if(any(is.na(renamed_table))){
         text = "Bad conversion, some values are NULL"
-        stupidSignal::error(text)
+        simpleSignal::error(text)
         }
     write.table(renamed_table, file=args$renamed_table, quote=FALSE, sep=" ",
                 col.names=FALSE, row.names=FALSE)        

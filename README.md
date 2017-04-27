@@ -4,7 +4,7 @@ This repository contains code and source files to fully replicate analysis from 
 
 Analysis was performed on GNU/Linux operating system using `BayesTraits v2`, `R`, `Python`, `make`/`remake` and liberal amount of `bash` scripts. The usage of most recent version of all tools is suggested.
 
-Used `R` packages: `ape`, `phangorn`, `phytools`, `coda`, `argparser` and self-made package `stupidSignal` (code provided)
+Used `R` packages: `ape`, `phangorn`, `phytools`, `coda`, `argparser` and self-made package `simpleSignal` (code provided)
 
 Used `Python` packages: `dendropy` and `argparse`
 

@@ -10,7 +10,7 @@
 #' the same.
 library("argparser", quiet=TRUE)
 library("ape")
-library("stupidSignal")
+library("simpleSignal")
 
 check_names = function(names1, names2){
     if(all(names1 %in% names2) && all(names2 %in% names1)){
@@ -31,7 +31,7 @@ fuzzy_matching = function(names1, names2, rename){
         "Look at generated table:\n", rename,
         "\nCorrect it and run me again.\n"
         )
-    stupidSignal::info(text)
+    simpleSignal::info(text)
     unmatched1 = names1[!(names1 %in% names2)]
     unmatched2 = names2[!(names2 %in% names1)]
     
@@ -67,7 +67,7 @@ report_error = function(name1, names1, name2, names2){
         "Names in ", name2, " that are missing from ", name1, ":\n",
         paste0("\t", names2_not_in_names1, collapse="\n"), "\n\n"
         )
-    stupidSignal::warn(error_text, log=TRUE) 
+    simpleSignal::warn(error_text, log=TRUE) 
     }
 
 
@@ -76,12 +76,12 @@ check_coding = function(name1, table1, name2, table2){
         "Test if coding in ", name1, " corresponds to coding in ",
         name2, ":\n"
         )
-    stupidSignal::info(text)
+    simpleSignal::info(text)
     # names are already matching
     table1 = table1[order(table1[,1]), ]
     table2 = table2[order(table2[,2]), ]
     if(all(table1[,2] == table1[,2])){
-        stupidSignal::pass()
+        simpleSignal::pass()
         } else {
         not_equal = table[,2] != table[,2]
         text = paste0(
@@ -97,7 +97,7 @@ check_coding = function(name1, table1, name2, table2){
                 table2[not_equal, 2], collapse="\n"
                 ), "\n\n"
             )
-        stupidSignal::warn(text, log=TRUE)
+        simpleSignal::warn(text, log=TRUE)
         }
     }
 
@@ -151,7 +151,7 @@ get_names = function(object){
         } else if(class(object) == "multiPhylo"){
         names = attr(object, "TipLabel")
         } else {
-        stupidSignal::error("In get_names(object): Unrecognized object.")
+        simpleSignal::error("In get_names(object): Unrecognized object.")
         }
     return(names)
     }
@@ -165,7 +165,7 @@ set_names = function(object, names){
         } else if(class(object) == "multiPhylo"){
         attr(object, "TipLabel") = names
         } else {
-        stupidSignal::error("In set_names(object, names): Unrecognized object.")
+        simpleSignal::error("In set_names(object, names): Unrecognized object.")
         }
     return(object)
     }
@@ -177,7 +177,7 @@ save_object = function(object, path){
         } else if(class(object) == "phylo" || class(object) == "multiPhylo"){
         save_tree(object, path)
         } else {
-        stupidSignal::error("In save_object(object, path): Unrecognized object.")
+        simpleSignal::error("In save_object(object, path): Unrecognized object.")
         }
     }
 
@@ -192,7 +192,7 @@ prune_tree = function(tree, name_list){
     # check pruned tips are actually in tree:
     not_in_tree = (!name_list %in% get_names(tree))
     if(any(not_in_tree)){
-        stupidSignal::error(
+        simpleSignal::error(
             "In prune_tree(tree, name_list): Some names in name_list are not",
             " in tree:\n",
             paste0(not_in_tree, collapse="\n")
@@ -209,7 +209,7 @@ prune_tree = function(tree, name_list){
         tree = do.call(c.multiPhylo, temp)
         attributes(tree) = attr
         } else {
-        stupidSignal::error(
+        simpleSignal::error(
             "In prune_tree(tree, name_list): Unrecognized object."
             )
         }
@@ -238,7 +238,7 @@ reduce = function(table, name_list){
             paste0("    ", names_not_in_table, collapse="\n"),
             "\n\n"
             )
-        stupidSignal::warn(text, log=TRUE)
+        simpleSignal::warn(text, log=TRUE)
         }
     table = table[-names_in_table,]
     return(table)
@@ -246,7 +246,7 @@ reduce = function(table, name_list){
 
 
 main = function(args){
-    stupidSignal::log_init(args$log)
+    simpleSignal::log_init(args$log)
 
     if(args$tree){
         object = read_tree(args$input_one)
@@ -277,7 +277,7 @@ main = function(args){
         text = paste0(
             "Renaming file was found, renaming ", name1, ".\n"
             )
-        stupidSignal::info(text)
+        simpleSignal::info(text)
         renamed_names = rename(get_names(object), args$rename)
         object = set_names(object, renamed_names)
         }
@@ -289,9 +289,9 @@ main = function(args){
     text = paste0(
         "Check if names in ", name1, " correspond to names in ", name2, ":\n"
         )
-    stupidSignal::info(text)
+    simpleSignal::info(text)
     if(check_names(names1, names2)){
-        stupidSignal::pass()
+        simpleSignal::pass()
 
         # if names are correct, test coding if specified
         if(args$coding){
@@ -311,7 +311,7 @@ main = function(args){
             fuzzy_matching(names1, names2, args$rename)
             }
         # throw error
-        stupidSignal::stop_if_warn()
+        simpleSignal::stop_if_warn()
         }
     }
 
@@ -406,7 +406,7 @@ args_parser = function(){
 if(!interactive()){
     args = args_parser()
     if(args$coding && args$tree){
-        stupidSignal::error("Can't check coding for tree input.")
+        simpleSignal::error("Can't check coding for tree input.")
         }
     main(args)
     }

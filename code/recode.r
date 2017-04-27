@@ -6,7 +6,7 @@
 #' and substitute post-marital residence by this coding scheme
 
 library("argparser", quiet=TRUE)
-library("stupidSignal")
+library("simpleSignal")
 
 read_file = function(filepath){
     data = read.table(filepath, sep=" ", header=TRUE, stringsAsFactors=FALSE)
@@ -38,7 +38,7 @@ main = function(args){
             " Check if recoding tables contain headers or if all", 
             " symbols are being recoded and try again."
             )
-        stupidSignal::error(text)
+        simpleSignal::error(text)
         }
 
     write.table(recoded, file=args$recoded, col.names=args$header,

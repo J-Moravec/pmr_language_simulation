@@ -1,4 +1,4 @@
-library("stupidSignal")
+library("simpleSignal")
 
 args = commandArgs(TRUE)
 
@@ -50,7 +50,7 @@ parse_args = function(args){
             " for these parameters: ",
             paste0(args[which_missing], collapse=", ")
             )
-        stupidSignal::error(text)
+        simpleSignal::error(text)
         }
     # parameter vector for substitution
     params_names = args[params_pos]
@@ -70,7 +70,7 @@ substitute_params = function(params, args){
             "These input parameters are not config parameters: ",
             names(args)[are_not_params]
             )
-        stupidSignal::warn(text)
+        simpleSignal::warn(text)
         }
     # substitute
     params[names(args)[are_params]] = args[are_params]

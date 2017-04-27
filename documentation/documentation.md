@@ -35,8 +35,8 @@ Only the *preprocessing* step is specific for each dataset, all other steps are 
 
 In total, 15 scripts were used to perform analysis. Here is short description of them:
 
-#### stupidSignal
-Package providing colored wrappers around standard `R` signals (`stop()`, `warning()` and `message()`), so that they can be easily distinguished in output. Note that the coloring code does not currently determine if terminal is capable of handling colors, so if it is not capable, or if output is send to file instead of graphical terminal, then you will see the special coloring marks.
+#### simpleSignal
+Package providing colored wrappers around standard `R` signals (`stop()`, `warning()` and `message()`), so that they can be easily distinguished in output.
 
 
 #### check_names.r

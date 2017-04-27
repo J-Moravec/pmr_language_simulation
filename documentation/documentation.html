@@ -23,11 +23,12 @@
          <ul class="nav", style="float:right;">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Content<b class="caret"></b></a>
-            <ul class="dropdown-menu">    <li class="sidebar-header-1"><a href="#pipeline-documentation">Pipeline documentation</a></li>
+            <ul class="dropdown-menu"><ul class="nav nav-list">
+    <li class="sidebar-header-1"><a href="#pipeline-documentation">Pipeline documentation</a></li>
     <li class="sidebar-header-2"><a href="#design-aims-and-problems">Design aims and problems</a></li>
     <li class="sidebar-header-2"><a href="#pipeline-structure-">Pipeline structure:</a></li>
     <li class="sidebar-header-2"><a href="#used-scripts-and-their-short-description-">Used scripts and their short description:</a></li>
-    <li class="sidebar-header-4"><a href="#stupidsignal">stupidSignal</a></li>
+    <li class="sidebar-header-4"><a href="#simplesignal">simpleSignal</a></li>
     <li class="sidebar-header-4"><a href="#check_names-r">check_names.r</a></li>
     <li class="sidebar-header-4"><a href="#generate_config-r">generate_config.r</a></li>
     <li class="sidebar-header-4"><a href="#model_string-r">model_string.r</a></li>
@@ -40,6 +41,7 @@
     <li class="sidebar-header-4"><a href="#simulate_simmap-r">simulate_simmap.r</a></li>
     <li class="sidebar-header-4"><a href="#summarize_rates-r-summarize_traces-r-summarize_trees-r">summarize_rates.r summarize_traces.r summarize_trees.r</a></li>
     <li class="sidebar-header-4"><a href="#unify_format-r">unify_format.r</a></li>
+</ul>
             </ul>
           </li>
         </ul>
@@ -80,8 +82,8 @@
 </ul>
 <h2 id="used-scripts-and-their-short-description-"><a class="header-link" href="#used-scripts-and-their-short-description-"></a>Used scripts and their short description:</h2>
 <p>In total, 15 scripts were used to perform analysis. Here is short description of them:</p>
-<h4 id="stupidsignal"><a class="header-link" href="#stupidsignal"></a>stupidSignal</h4>
-<p>Package providing colored wrappers around standard <code>R</code> signals (<code>stop()</code>, <code>warning()</code> and <code>message()</code>), so that they can be easily distinguished in output. Note that the coloring code does not currently determine if terminal is capable of handling colors, so if it is not capable, or if output is send to file instead of graphical terminal, then you will see the special coloring marks.</p>
+<h4 id="simplesignal"><a class="header-link" href="#simplesignal"></a>simpleSignal</h4>
+<p>Package providing colored wrappers around standard <code>R</code> signals (<code>stop()</code>, <code>warning()</code> and <code>message()</code>), so that they can be easily distinguished in output.</p>
 <h4 id="check_names-r"><a class="header-link" href="#check_names-r"></a>check_names.r</h4>
 <p>Compare two tables or table and tree and report if any item from tree is missing from table or if any item from table is missing from tree. Both tree-names and table-names are set to lowercase. Both tree and table can be pruned (remove unvanted languages) by specifying <code>--prune</code> or <code>--reduce</code> arguments.</p>
 <h4 id="generate_config-r"><a class="header-link" href="#generate_config-r"></a>generate_config.r</h4>
