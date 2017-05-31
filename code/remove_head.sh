@@ -1,5 +1,6 @@
 #!/bin/bash
-
+set -u # stop if variables are not set
+set -e # stop if error
 
 # help function
 function HELP {

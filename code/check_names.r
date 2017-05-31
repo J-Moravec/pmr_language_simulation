@@ -10,7 +10,7 @@
 #' the same.
 library("argparser", quiet=TRUE)
 library("ape")
-library("simpleSignal")
+library("simpleSignal", quiet=TRUE)
 
 check_names = function(names1, names2){
     if(all(names1 %in% names2) && all(names2 %in% names1)){

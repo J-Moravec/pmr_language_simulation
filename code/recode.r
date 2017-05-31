@@ -6,7 +6,7 @@
 #' and substitute post-marital residence by this coding scheme
 
 library("argparser", quiet=TRUE)
-library("simpleSignal")
+library("simpleSignal", quiet=TRUE)
 
 read_file = function(filepath){
     data = read.table(filepath, sep=" ", header=TRUE, stringsAsFactors=FALSE)

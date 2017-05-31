@@ -3,7 +3,7 @@
 #' This script will summarize nexus trees and output simple formated stats
 library("argparser", quiet=TRUE)
 library("ape")
-library("simpleSignal")
+library("simpleSignal", quiet=TRUE)
 
 
 read_tree = function(filepath){

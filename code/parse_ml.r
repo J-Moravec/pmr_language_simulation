@@ -1,5 +1,5 @@
 library("argparser", quiet=TRUE)
-library("simpleSignal")
+library("simpleSignal", quiet=TRUE)
 
 
 

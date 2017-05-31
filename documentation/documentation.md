@@ -1,6 +1,3 @@
-title: Pipeline documentation
-tags: ["bah"]
-----
 # Pipeline documentation
 
 This documentation should provide a short overview on structure, aims and function of pipeline as a whole and its individual parts.

@@ -1,7 +1,7 @@
 #' Read two column matrix and change names according to another two
 #' another two column matrix.
 library("argparser", quiet=TRUE)
-library("simpleSignal")
+library("simpleSignal", quiet=TRUE)
 
 get_renaming_vector = function(renaming_file){
     table = read.table(renaming_file, sep=" ", stringsAsFactors=FALSE,

@@ -1,4 +1,4 @@
-library("simpleSignal")
+library("simpleSignal", quiet=TRUE)
 
 args = commandArgs(TRUE)
 

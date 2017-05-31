@@ -8,7 +8,7 @@
 #' as calculated from tree.
 library("argparser", quiet=TRUE)
 library("ape")
-library("simpleSignal")
+library("simpleSignal", quiet=TRUE)
 
 
 read_traces = function(filenames){
