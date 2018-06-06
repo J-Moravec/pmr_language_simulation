@@ -1,5 +1,4 @@
-## A supplement to *Post-Marital Residence Patterns Show Lineage-Specific
-Evolution* (Moravec et al. 2017)
+## A supplement to *Post-Marital Residence Patterns Show Lineage-Specific Evolution* (Moravec et al. 2017)
 
 This repository contains code and source files to fully replicate analysis from *Few Global Commonalities in Transition Dynamics between Post-Marital Residence States* (Moravec et al. 2017). Output files from analysis itself are not included due to size limitations. Input and output files of phylogenetic reconstruction of Pama-Nyungan language family are not included as well for similar reasons.
 

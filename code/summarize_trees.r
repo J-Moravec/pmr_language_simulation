@@ -21,6 +21,13 @@ pastef = function(..., collapse=NULL, digits=4){
     }
 
 
+get_heights = function(tree){
+    edgelengths = node.depth.edgelength(tree)
+    Ntips = length(tree$tip.label)
+    heights = edgelengths[1:Ntips]
+    return(heights)
+    }
+
 get_tree_stats = function(tree, digits){
     get_tree_stats_multiphylo = function(tree){
         tree_stats = list()
@@ -28,11 +35,26 @@ get_tree_stats = function(tree, digits){
         tree_stats[["n_trees"]] = length(tree)
         tree_stats[["n_taxa"]] = length(attr(tree, "TipLabel"))
 
-        tree_heights = unlist(lapply(lapply(tree, node.depth.edgelength), max))
+
+        tree_heights = unlist(lapply(lapply(tree, get_heights), max))
         tree_stats[["tree_height_mean"]] = mean(tree_heights)
         tree_stats[["tree_height_min"]] = min(tree_heights)
         tree_stats[["tree_height_max"]] = max(tree_heights)
         tree_stats[["tree_height_sd"]] = sd(tree_heights)
+
+
+        tree_heights = unlist(lapply(lapply(tree, get_heights), min))
+        tree_stats[["tree_height_min_mean"]] = mean(tree_heights)
+        tree_stats[["tree_height_min_min"]] = min(tree_heights)
+        tree_stats[["tree_height_min_max"]] = max(tree_heights)
+        tree_stats[["tree_height_min_sd"]] = sd(tree_heights)
+
+
+        tree_heights = unlist(lapply(lapply(tree, get_heights), mean))
+        tree_stats[["tree_height_mean_mean"]] = mean(tree_heights)
+        tree_stats[["tree_height_mean_min"]] = min(tree_heights)
+        tree_stats[["tree_height_mean_max"]] = max(tree_heights)
+        tree_stats[["tree_height_mean_sd"]] = sd(tree_heights)
 
         branches = unlist(lapply(tree, getElement, "edge.length"))
         tree_stats[["branch_mean"]] = mean(branches)
@@ -79,11 +101,21 @@ get_tree_stats = function(tree, digits){
             "Tree stats:\n",
             "        n_trees: ", tree_stats$n_trees, "\n",
             "        n_taxa: ", tree_stats$n_taxa, "\n",
-            "    Tree height:\n",
+            "    Tree height: max\n",
             "        mean: ", tree_stats$tree_height_mean, "\n",
             "        min: ", tree_stats$tree_height_min, "\n",
             "        max: ", tree_stats$tree_height_max, "\n",
             "        sd: ", tree_stats$tree_height_sd, "\n",
+            "    Tree height: min\n",
+            "        mean: ", tree_stats$tree_height_min_mean, "\n",
+            "        min: ", tree_stats$tree_height_min_min, "\n",
+            "        max: ", tree_stats$tree_height_min_max, "\n",
+            "        sd: ", tree_stats$tree_height_min_sd, "\n",
+            "    Tree height: mean\n",
+            "        mean: ", tree_stats$tree_height_mean_mean, "\n",
+            "        min: ", tree_stats$tree_height_mean_min, "\n",
+            "        max: ", tree_stats$tree_height_mean_max, "\n",
+            "        sd: ", tree_stats$tree_height_mean_sd, "\n",
             "    Branch length:\n",
             "        mean: ", tree_stats$branch_mean, "\n",
             "        min: ", tree_stats$branch_min, "\n",

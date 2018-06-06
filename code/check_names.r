@@ -190,12 +190,14 @@ read_prune_list = function(filepath){
 
 prune_tree = function(tree, name_list){
     # check pruned tips are actually in tree:
-    not_in_tree = (!name_list %in% get_names(tree))
+    not_in_tree = !(name_list %in% get_names(tree))
     if(any(not_in_tree)){
         simpleSignal::error(
-            "In prune_tree(tree, name_list): Some names in name_list are not",
-            " in tree:\n",
-            paste0(not_in_tree, collapse="\n")
+            paste0(
+                "In prune_tree(tree, name_list): Some names in name_list are not",
+                " in tree:\n",
+                paste0(name_list[not_in_tree], collapse="\n")
+                )
             )
         }
 

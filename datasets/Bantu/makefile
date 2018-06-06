@@ -74,25 +74,26 @@ TREE = $(NAME).trees
 
 preprocess: unify_formatting check_tree
 
-
-
-
 unify_formatting: $(PREP)/residence.txt
 
-$(PREP)/residence.txt: $(PREP)/residence_uncoded.txt $(SOURCE)/coding.txt
+$(PREP)/prep_residence.txt: $(PREP)/residence_uncoded.txt $(SOURCE)/coding.txt
 + $(RECODE) $< $(word 2,$^) $@ --header
 
 $(PREP)/residence_uncoded.txt: $(SOURCE)/residence.txt | $(DIRS)
 + $(UNIFY_FORMAT) $< $@ --sep "\t"  --colnames "name" "residence"
-
 
 check_tree: $(DATA)/$(TREE)
 
 $(PREP)/$(TREE): $(SOURCE)/$(TREE)
 + $(REFORMAT_TREE) $< $@
 
-$(DATA)/$(TREE): $(PREP)/$(TREE) $(PREP)/residence.txt
-+ $(CHECK_NAMES) $< $(word 2,$^) --tree --rename $(PREP)/renaming_tree.txt --save $@ --log $(LOGS)/check_tree.log
+$(DATA)/$(TREE): $(PREP)/$(TREE) $(PREP)/prep_residence.txt $(SOURCE)/prune.txt $(SOURCE)/reduce.txt
++ $(CHECK_NAMES) $< $(word 2,$^) --tree --rename $(PREP)/renaming_tree.txt --save $@ \
+ --log $(LOGS)/check_tree.log --prune $(SOURCE)/prune.txt \
+ --reduce $(SOURCE)/reduce.txt --reduce_save $(PREP)/residence.txt
+
+$(PREP)/residence.txt: $(DATA)/$(TREE)
+
 # end of specific part
 # ------------------------------------------------------------------------------
 create_dirs: $(DIRS)
